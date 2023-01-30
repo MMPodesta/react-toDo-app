@@ -4,7 +4,7 @@ export const Profile = () =>{
     return(
         <div>
             <h1>Profile Page</h1>
-            <Greeting name="user"/>
+            <Greeting name={localStorage.getItem("name")}/>
         </div>
     );
 };
