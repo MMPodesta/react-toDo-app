@@ -1,10 +1,13 @@
 import './App.css';
-import { Nav } from './components/Nav';
+import { Greeting } from './components/Greeting'; 
+import { Nav} from './components/Nav';
+
 
 function App() {
   return (
     <div className="App">
       <Nav/>
+      <Greeting />
     </div>
   );
 }
