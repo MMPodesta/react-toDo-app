@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
-      <Greeting />
+      <Greeting name="User"/>
     </div>
   );
 }
