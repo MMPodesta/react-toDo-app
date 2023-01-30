@@ -1,13 +1,19 @@
 import './App.css';
-import { Greeting } from './components/Greeting'; 
 import { Nav} from './components/Nav';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //npm install react-router-dom
+import { Home } from './pages/Home';
+import { Profile } from './pages/Profile';
 
 function App() {
   return (
     <div className="App">
-      <Nav/>
-      <Greeting name="User"/>
+      <Router>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/profile" element={<Profile />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
