@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../Firebase";
 
 export const Nav = () =>{
     const navigate = useNavigate();
+    const user = localStorage.getItem("name");
 
     const logOut = () =>{
         localStorage.clear();
+        auth.signOut();
         navigate("/");
     };
 
