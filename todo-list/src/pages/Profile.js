@@ -1,7 +1,7 @@
 import { Greeting } from "../components/Greeting";
 import { useState, useEffect } from "react";
 import { db } from "../Firebase";
-import { collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
 import { async } from "@firebase/util";
 
 export const Profile = () =>{
@@ -22,8 +22,10 @@ export const Profile = () =>{
         getUsers();
     }
 
-    const deleteTask = async () =>{
-        
+    const deleteTask = async (item) =>{
+        const userItem = doc(db, "users", item); 
+        await deleteDoc(userItem);
+        getUsers();
     }
 
     //called ever page render
@@ -48,7 +50,7 @@ export const Profile = () =>{
                 return( 
                     <div>
                         <h1>Item: {user.item}</h1>
-                        <button>Delete Task</button>
+                        <button onClick={() => {deleteTask(user.id)}}> Delete Task </button>
                     </div>
                 );
             })}
