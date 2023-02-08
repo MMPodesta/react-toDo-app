@@ -38,14 +38,18 @@ export const Profile = () =>{
         <div className="flex flex-col items-center p-2 mt-5">
             <h1 className="text-3xl font-semibold">Profile Page</h1>
             <Greeting name={localStorage.getItem("name")}/>
-            <input 
-            placeholder="Item..." 
-            onChange={(event) => {
-                setNewItem(event.target.value);
-                }}
-            />
-
-            <button onClick={createItem}> Create Task</button>
+            <div className="flex gap-3 mt-5">
+                <input
+                placeholder="Item..." 
+                onChange={(event) => {
+                    setNewItem(event.target.value);
+                    }}
+                />
+                <button className="bg-blue-500 text-white font-bold py-2 px-4 
+                rounded-full hover:bg-blue-700" onClick={createItem}> Create Task
+                </button>
+            </div>
+            
             {tasks.map((user) => {
                 return( 
                     <div>
