@@ -1,5 +1,6 @@
 import { signInWithGoogle } from "../Firebase";
 import { useNavigate } from "react-router-dom";
+import { GoogleButton } from "react-google-button"
 
 export const Home = () =>{
     const navigate = useNavigate();
@@ -17,9 +18,10 @@ export const Home = () =>{
     }
 
     return(
-        <div>
-            <h1 className="text-2xl"> Home Page</h1>
-            <button onClick={login}> Sign In With Google</button>
+        <div className="flex flex-col items-center p-2 mt-5">
+            <h1 className="text-3xl font-semibold"> Home Page</h1>
+            <GoogleButton onClick={login} className="mt-20 "></GoogleButton>
+            
         </div> 
     );
 };
