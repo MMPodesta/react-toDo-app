@@ -35,8 +35,8 @@ export const Profile = () =>{
     }, [])
 
     return(
-        <div>
-            <h1>Profile Page</h1>
+        <div className="flex flex-col items-center p-2 mt-5">
+            <h1 className="text-3xl font-semibold">Profile Page</h1>
             <Greeting name={localStorage.getItem("name")}/>
             <input 
             placeholder="Item..." 
