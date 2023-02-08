@@ -13,15 +13,18 @@ export const Nav = () =>{
     };
 
     return(
-        <section>
-            <div>
-                <h1>ToDo List</h1>
-                <h2>
-                    <Link to="/"> Home </Link>
-                    <Link to="/profile"> Profile </Link> 
+            <div className="flex justify-between p-5">
+                <div>
+                    <h1 className="text-xl">ToDo List</h1>
+                </div>
+                
+                <div className="text-lg">
+                    <Link to="/" className="hover:shadow-sm"> Home </Link>
+                    <Link to="/profile" className="hover:shadow-sm"> Profile </Link> 
                     <button onClick={logOut}>Sign Out</button>
-                </h2>      
+                </div>
+                
+                     
             </div>
-        </section>
     );
 };
