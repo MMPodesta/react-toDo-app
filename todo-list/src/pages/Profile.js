@@ -38,6 +38,7 @@ export const Profile = () =>{
         <div className="flex flex-col items-center p-2 mt-5">
             <h1 className="text-3xl font-semibold">Profile Page</h1>
             <Greeting name={localStorage.getItem("name")}/>
+            <p>Add, check and delete your tasks below.</p>
             <div className="flex gap-3 mt-5">
                 <input className="outline outline-2"
                 placeholder="Item..." 
@@ -49,7 +50,7 @@ export const Profile = () =>{
                 rounded-full hover:bg-blue-700" onClick={createItem}> Create Task
                 </button>
             </div>
-            <div className="mt-5">
+            <div className="mt-10">
                 {tasks.map((user) => {
                     return( 
                         <div className="flex gap-3">

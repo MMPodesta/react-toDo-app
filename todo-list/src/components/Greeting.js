@@ -1,5 +1,5 @@
 export const Greeting = (props) =>{
     return(
-        <h2 className="mt-20 text-xl">Hello, {props.name}</h2>
+        <h2 className="mt-10 text-2xl">Hello, {props.name}</h2>
     ); 
 };
