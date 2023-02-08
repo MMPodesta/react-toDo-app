@@ -13,12 +13,12 @@ export const Nav = () =>{
     };
 
     return(
-            <div className="flex justify-between p-5">
+            <div className="flex justify-between p-9">
                 <div>
                     <h1 className="text-xl">ToDo List</h1>
                 </div>
                 
-                <div className="text-lg">
+                <div className="text-lg ">
                     <Link to="/" className="hover:shadow-sm"> Home </Link>
                     <Link to="/profile" className="hover:shadow-sm"> Profile </Link> 
                     <button onClick={logOut}>Sign Out</button>
