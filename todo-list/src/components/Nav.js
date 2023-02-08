@@ -13,13 +13,15 @@ export const Nav = () =>{
     };
 
     return(
-        <div>
-            <h1>ToDo List</h1>
-            <h2>
-                <Link to="/"> Home </Link>
-                <Link to="/profile"> Profile </Link> 
-                <button onClick={logOut}>Sign Out</button>
-            </h2>      
-        </div>
+        <section>
+            <div>
+                <h1>ToDo List</h1>
+                <h2>
+                    <Link to="/"> Home </Link>
+                    <Link to="/profile"> Profile </Link> 
+                    <button onClick={logOut}>Sign Out</button>
+                </h2>      
+            </div>
+        </section>
     );
 };
