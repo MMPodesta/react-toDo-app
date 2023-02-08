@@ -39,7 +39,7 @@ export const Profile = () =>{
             <h1 className="text-3xl font-semibold">Profile Page</h1>
             <Greeting name={localStorage.getItem("name")}/>
             <div className="flex gap-3 mt-5">
-                <input
+                <input className="outline outline-2"
                 placeholder="Item..." 
                 onChange={(event) => {
                     setNewItem(event.target.value);
@@ -49,15 +49,16 @@ export const Profile = () =>{
                 rounded-full hover:bg-blue-700" onClick={createItem}> Create Task
                 </button>
             </div>
-            
-            {tasks.map((user) => {
-                return( 
-                    <div>
-                        <h1>Item: {user.item}</h1>
-                        <button onClick={() => {deleteTask(user.id)}}> Delete Task </button>
-                    </div>
-                );
-            })}
+            <div className="mt-5">
+                {tasks.map((user) => {
+                    return( 
+                        <div className="flex gap-3">
+                            <h3 className="text-2xl">Task: {user.item}</h3>
+                            <button className="bg-red-500 text-white font-bold py-2 px-4 hover:bg-red-700" onClick={() => {deleteTask(user.id)}}> Delete Task </button>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };
