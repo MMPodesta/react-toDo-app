@@ -24,7 +24,7 @@ export const Nav = () =>{
                     <div className="flex gap-3">
                         <Link to="/"> Home </Link>
                         <Link to="/profile"> Profile </Link>
-                        <ImExit className="text-xl cursor-pointer" onClick={logOut}/>
+                        <ImExit className="text-2xl cursor-pointer" onClick={logOut}/>
                     </div>) 
                 : (
                     <div className="text-lg flex">
