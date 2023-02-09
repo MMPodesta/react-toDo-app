@@ -20,7 +20,11 @@ export const Home = () =>{
     return(
         <div className="flex flex-col items-center p-2 mt-5">
             <h1 className="text-3xl font-semibold"> Home Page</h1>
-            <GoogleButton onClick={login} className="mt-20"></GoogleButton>
+            {localStorage.getItem("name")? (
+                <h2 className="text-lg mt-3">Already logged in.</h2>
+            ):(
+                <GoogleButton onClick={login} className="mt-20"></GoogleButton>
+            )}
         </div> 
     );
 };
