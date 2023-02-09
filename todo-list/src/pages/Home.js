@@ -2,6 +2,7 @@ import { signInWithGoogle } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button"
 
+
 export const Home = () =>{
     const navigate = useNavigate();
     

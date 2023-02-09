@@ -2,7 +2,8 @@ import { Greeting } from "../components/Greeting";
 import { useState, useEffect } from "react";
 import { db } from "../Firebase";
 import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
-import { async } from "@firebase/util";
+import { BsTrash } from "react-icons/bs";
+import { SiAddthis } from "react-icons/si";
 
 export const Profile = () =>{
     const [newItem, setNewItem] = useState("");
@@ -35,27 +36,28 @@ export const Profile = () =>{
     }, [])
 
     return(
-        <div className="flex flex-col items-center p-2 mt-5">
+        <div className="flex flex-col items-center mt-5">
             <h1 className="text-3xl font-semibold">Profile Page</h1>
             <Greeting name={localStorage.getItem("name")}/>
             <p className="text-lg">Add, check and delete your tasks below.</p>
-            <div className="flex gap-3 mt-5">
-                <input className="outline outline-2"
-                placeholder="Item..." 
+            <div className="flex mt-5 w-96 justify-between">
+                <input maxlength="20" required className=" bg-gray-100 flex-1 py-2 px-4 "
+                placeholder="Task..." 
                 onChange={(event) => {
                     setNewItem(event.target.value);
                     }}
                 />
-                <button className="bg-blue-500 text-white font-bold py-2 px-4 
-                rounded-full hover:bg-blue-700" onClick={createItem}> Create Task
+                <button className="bg-green-500 text-white   py-2  px-4 
+                hover:bg-green-700" onClick={newItem.length > 0 && createItem}><SiAddthis/>
                 </button>
             </div>
-            <div className="mt-10">
+            <div className="mt-10 ">
                 {tasks.map((user) => {
                     return( 
-                        <div className="flex gap-3 mb-5">
-                            <h3 className="text-2xl m-auto">Task: {user.item}</h3>
-                            <button className="bg-red-500 text-white font-bold py-2 px-4 hover:bg-red-700" onClick={() => {deleteTask(user.id)}}> Delete Task </button>
+                        <div className="flex  mb-3 justify-between w-96  bg-gray-100 text-xl max-h-10 min-h-max">
+                            <h3 className="py-2 px-4 overflow-hidden ">{user.item}</h3>
+                            <button className="bg-red-500 text-base  text-white font-bold py-2 px-4 hover:bg-red-700" 
+                            onClick={() => {deleteTask(user.id)}}><BsTrash/></button>
                         </div>
                     );
                 })}
