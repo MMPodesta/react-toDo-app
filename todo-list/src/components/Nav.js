@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../Firebase";
+import { ImExit } from "react-icons/im";
 
 
 export const Nav = () =>{
@@ -14,23 +15,22 @@ export const Nav = () =>{
     };
 
     return(
-            <div className="flex justify-between p-9">
+            <div className="flex justify-between text-xl p-9">
                 <div>
-                    <h1 className="text-xl">ToDo List</h1>
+                    <h1>ToDo List</h1>
                 </div>
-                
-                <div className="text-lg">
-                    <Link to="/"> Home </Link>
-                    {localStorage.getItem("name") ? (
-                        <>
+                 
+                {localStorage.getItem("name") ? (
+                    <div className="flex gap-3">
+                        <Link to="/"> Home </Link>
                         <Link to="/profile"> Profile </Link>
-                        <button onClick={logOut}>Sign Out</button>
-                        </>) 
-                    : (
-                        <></>
-                    )}
-                      
-                </div>        
-            </div>
+                        <ImExit className="text-xl cursor-pointer" onClick={logOut}/>
+                    </div>) 
+                : (
+                    <div className="text-lg flex">
+                        <Link to="/"> Home </Link>
+                    </div>
+                )}        
+            </div>        
     );
 };
