@@ -8,7 +8,7 @@ export const Profile = () =>{
     const [newItem, setNewItem] = useState("");
     
     //task hold list of tasks
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([]);
     const userCollectionRef = collection(db, "users");
 
     const getUsers = async () =>{

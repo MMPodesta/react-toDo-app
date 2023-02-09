@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../Firebase";
 
+
 export const Nav = () =>{
     const navigate = useNavigate();
     const user = localStorage.getItem("name");
@@ -18,13 +19,18 @@ export const Nav = () =>{
                     <h1 className="text-xl">ToDo List</h1>
                 </div>
                 
-                <div className="text-lg ">
-                    <Link to="/" className="hover:shadow-sm"> Home </Link>
-                    <Link to="/profile" className="hover:shadow-sm"> Profile </Link> 
-                    <button onClick={logOut}>Sign Out</button>
-                </div>
-                
-                     
+                <div className="text-lg">
+                    <Link to="/"> Home </Link>
+                    {localStorage.getItem("name") ? (
+                        <>
+                        <Link to="/profile"> Profile </Link>
+                        <button onClick={logOut}>Sign Out</button>
+                        </>) 
+                    : (
+                        <></>
+                    )}
+                      
+                </div>        
             </div>
     );
 };

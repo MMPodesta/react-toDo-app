@@ -21,7 +21,6 @@ export const Home = () =>{
         <div className="flex flex-col items-center p-2 mt-5">
             <h1 className="text-3xl font-semibold"> Home Page</h1>
             <GoogleButton onClick={login} className="mt-20"></GoogleButton>
-            
         </div> 
     );
 };
