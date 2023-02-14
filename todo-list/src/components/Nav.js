@@ -28,7 +28,7 @@ export const Nav = () =>{
                     </div>) 
                 : (
                     <div className="text-lg flex">
-                        <Link to="/"> Home </Link>
+                        <Link to="/"> Homee </Link>
                     </div>
                 )}        
             </div>        
