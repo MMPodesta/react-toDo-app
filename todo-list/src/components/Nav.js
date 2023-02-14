@@ -17,7 +17,7 @@ export const Nav = () =>{
     return(
             <div className="flex justify-between text-xl p-9">
                 <div>
-                    <h1>ToDo List!!!</h1>
+                    <h1>ToDo List</h1>
                 </div>
                  
                 {localStorage.getItem("name") ? (
