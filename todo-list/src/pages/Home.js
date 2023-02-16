@@ -26,6 +26,9 @@ export const Home = () =>{
             ):(
                 <GoogleButton onClick={login} className="mt-20"></GoogleButton>
             )}
+            <div>
+                Map here
+            </div>
         </div> 
     );
 };
